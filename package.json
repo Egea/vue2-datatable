@@ -1,10 +1,10 @@
 {
-  "name": "vue2-datatable-component",
-  "description": "The best Datatable for Vue.js 2.x which never sucks",
+  "name": "@egeatech/vue2-datatable-component",
+  "description": "This is a fork of Datatable for Vue.js 2.x of Ken Berkeley",
   "version": "2.3.1",
   "main": "dist/min.js",
   "module": "src/main.js",
-  "author": "Ken Berkeley <kenberkeley@foxmail.com>",
+  "author": "Egeatech <info@egeatech.com>",
   "files": [
     "dist",
     "locale",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OneWayTech/vue2-datatable.git"
+    "url": "git+https://github.com/Egea/vue2-datatable.git"
   },
   "keywords": [
     "vue",
