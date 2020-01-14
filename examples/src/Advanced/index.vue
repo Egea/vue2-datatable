@@ -6,6 +6,7 @@
         <i class="fa fa-commenting-o"></i>
         Alert selected uid(s)
       </button>
+
     </datatable>
   </div>
 </template>
@@ -32,13 +33,13 @@ export default {
           { title: 'UID', field: 'uid', label: 'User ID', sortable: true, visible: 'true' },
           { title: 'Email', field: 'email', visible: false, thComp: 'FilterTh', tdComp: 'Email' },
           { title: 'Username', field: 'name', thComp: 'FilterTh', tdStyle: { fontStyle: 'italic' } },
-          { title: 'Country', field: 'country', thComp: 'FilterTh', thStyle: { fontWeight: 'normal' } },
+          { title: 'Country', field: 'other.country', thComp: 'FilterTh', thStyle: { fontWeight: 'normal' } },
           { title: 'IP', field: 'ip', visible: false, tdComp: 'IP' },
           { title: 'Age', field: 'age', sortable: true, thClass: 'text-info', tdClass: 'text-success' },
           { title: 'Create time', field: 'createTime', sortable: true, colClass: 'w-240', thComp: 'CreatetimeTh', tdComp: 'CreatetimeTd' },
           { title: 'Color', field: 'color', explain: 'Favorite color', visible: false, tdComp: 'Color' },
-          { title: 'Language', field: 'lang', visible: false, thComp: 'FilterTh' },
-          { title: 'PL', field: 'programLang', explain: 'Programming Language', visible: false, thComp: 'FilterTh' },
+          { title: 'Language', field: 'other.lang', visible: false, thComp: 'FilterTh' },
+          { title: 'PL', field: 'other.programLang', explain: 'Programming Language', visible: false, thComp: 'FilterTh' },
           { title: 'Operation', tdComp: 'Opt', visible: 'true' }
         ]
         const groupsDef = {

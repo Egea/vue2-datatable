@@ -17,15 +17,17 @@ const users = Array(total).fill().map((item, idx) => {
       uniq(Array(getRandomUid()).fill().map(() => getRandomUid())),
       idx // exclude `myself`
     ),
-    country: Random.pick(
-      ['US', 'UK', 'China', 'Russia', 'Germany', 'France', 'Japan']
-    ),
-    lang: Random.pick(
-      ['English', 'Chinese', 'Russian', 'German', 'French', 'Japanese']
-    ),
-    programLang: Random.pick(
-      ['C', 'C++', 'Java', 'C#', 'Python', 'Ruby', 'PHP', 'JavaScript', 'Go']
-    ),
+    other: {
+      country: Random.pick(
+        ['US', 'UK', 'China', 'Russia', 'Germany', 'France', 'Japan']
+      ),
+      lang: Random.pick(
+        ['English', 'Chinese', 'Russian', 'German', 'French', 'Japanese']
+      ),
+      programLang: Random.pick(
+        ['C', 'C++', 'Java', 'C#', 'Python', 'Ruby', 'PHP', 'JavaScript', 'Go']
+      )
+    },
     ip: Random.ip(),
     color: Random.color(),
     createTime: +new Date(Random.datetime('yyyy/MM/dd HH:mm:ss')) // to timestamp

@@ -18,7 +18,7 @@
               v-bind="$props">
             </component>
             <template v-else>
-              {{ item[col.field] }}
+              {{ getField(item, col.field) }}
             </template>
           </td>
         </tr>
@@ -48,6 +48,7 @@
 import MultiSelect from './MultiSelect.vue'
 import props from '../_mixins/props'
 import shouldRenderSelection from '../_mixins/shouldRenderSelection'
+import _ from 'lodash'
 
 export default {
   name: 'TableBody',
@@ -56,6 +57,11 @@ export default {
   computed: {
     colLen () {
       return this.columns.length + !!this.selection
+    }
+  },
+  methods: {
+    getField(obj, path) {
+      return _.get(obj, path)
     }
   }
 }
