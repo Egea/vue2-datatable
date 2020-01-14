@@ -1,7 +1,7 @@
 {
   "name": "@egeatech/vue2-datatable-component",
   "description": "This is a fork of Datatable for Vue.js 2.x of Ken Berkeley",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "main": "dist/min.js",
   "module": "src/main.js",
   "author": "Egeatech <info@egeatech.com>",

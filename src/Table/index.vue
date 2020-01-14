@@ -36,7 +36,8 @@
   <div v-else name="SimpleTable">
     <table-frame v-bind="propsToNormalTable">
       <table-header v-bind="propsToNormalTable" />
-      <table-body v-bind="propsToNormalTable" />
+      <slot v-if="loading" name="spinner"></slot>
+      <table-body v-else v-bind="propsToNormalTable" />
       <table-footer v-if="summary" v-bind="propsToNormalTable" />
     </table-frame>
   </div>

@@ -14,7 +14,8 @@ export default {
     tblStyle: [String, Object, Array], // inline styles for <table>
     fixHeaderAndSetBodyMaxHeight: Number, // a fancy prop which combines two props into one
     supportNested: [Boolean, String], // support nested components feature (String is only for 'accordion')
-    supportBackup: Boolean // support backup for `HeaderSettings`
+    supportBackup: Boolean, // support backup for `HeaderSettings`
+    loading: { type: Boolean, default: false } // display loading slot in table body
   },
   data () {
     let datatableInstance = this
