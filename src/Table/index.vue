@@ -37,7 +37,14 @@
     <table-frame v-bind="propsToNormalTable">
       <table-header v-bind="propsToNormalTable" />
       <table-body  v-bind="propsToNormalTable">
-        <slot name="spinner" slot="spinner" />
+        <!-- pass through scoped slots -->
+        <template v-for="(_, scopedSlotName) in $scopedSlots" v-slot:[scopedSlotName]="slotData">
+          <slot :name="scopedSlotName" v-bind="slotData" />
+        </template>
+        <!-- pass through normal slots -->
+        <template v-for="(_, slotName) in $slots" v-slot:[slotName]>
+          <slot :name="slotName" />
+        </template>
       </table-body>
       <table-footer v-if="summary" v-bind="propsToNormalTable" />
     </table-frame>

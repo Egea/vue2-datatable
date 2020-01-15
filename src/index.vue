@@ -8,7 +8,14 @@
     </div>
 
     <tbl v-bind="$props">
-      <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+      <!-- pass through scoped slots -->
+      <template v-for="(_, scopedSlotName) in $scopedSlots" v-slot:[scopedSlotName]="slotData">
+        <slot :name="scopedSlotName" v-bind="slotData" />
+      </template>
+      <!-- pass through normal slots -->
+      <template v-for="(_, slotName) in $slots" v-slot:[slotName]>
+        <slot :name="slotName" />
+      </template>
     </tbl>
     
     <div v-if="Pagination" class="row" style="margin-top: 10px">

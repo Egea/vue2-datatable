@@ -7,6 +7,7 @@
         Alert selected uid(s)
       </button>
       <template v-slot:spinner> Loading... </template>
+      <template v-slot:other.country="col"><span style="color: darkred"><i>{{ col.data }}</i></span></template>
     </datatable>
   </div>
 </template>

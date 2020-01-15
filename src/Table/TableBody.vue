@@ -22,6 +22,11 @@
               :nested="item.__nested__"
               v-bind="$props">
             </component>
+            <template v-else-if="$scopedSlots[col.field]">
+              <template>
+                <slot :name="col.field" :data="getField(item, col.field)"/>
+              </template>
+            </template>
             <template v-else>
               {{ getField(item, col.field) }}
             </template>
