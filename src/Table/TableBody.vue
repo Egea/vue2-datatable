@@ -1,6 +1,11 @@
 <template>
   <tbody>
-    <template v-if="data.length">
+    <tr v-if="loading">
+      <td :colspan="colLen" class="text-center">
+        <slot name="spinner" />
+      </td>
+    </tr>
+    <template v-else-if="data.length">
       <template v-for="item in data">
         <tr>
           <td v-if="shouldRenderSelection">

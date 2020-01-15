@@ -7,7 +7,9 @@
       <slot />
     </div>
 
-    <tbl v-bind="$props" />
+    <tbl v-bind="$props">
+      <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+    </tbl>
     
     <div v-if="Pagination" class="row" style="margin-top: 10px">
       <div class="col-sm-6">

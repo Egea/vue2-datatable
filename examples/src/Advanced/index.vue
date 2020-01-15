@@ -6,7 +6,7 @@
         <i class="fa fa-commenting-o"></i>
         Alert selected uid(s)
       </button>
-
+      <template v-slot:spinner> Loading... </template>
     </datatable>
   </div>
 </template>
@@ -69,13 +69,17 @@ export default {
       // any other staff that you want to pass to dynamic components (thComp / tdComp / nested components)
       xprops: {
         eventbus: new Vue()
-      }
+      },
+      loading: true
     }
   },
   watch: {
     query: {
-      handler () {
-        this.handleQueryChange()
+      async handler () {
+        await this.sleep(2000).then(() => {
+          this.handleQueryChange()
+          this.loading = false
+        })
       },
       deep: true
     }
@@ -90,6 +94,9 @@ export default {
     },
     alertSelectedUids () {
       alert(this.selection.map(({ uid }) => uid))
+    },
+    sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
     }
   }
 }
