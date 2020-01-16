@@ -7,7 +7,7 @@
       <slot />
     </div>
 
-    <tbl v-bind="$props">
+    <tbl v-bind="$props" @on-row-click="$emit('on-row-click', $event)">
       <!-- pass through scoped slots -->
       <template v-for="(_, scopedSlotName) in $scopedSlots" v-slot:[scopedSlotName]="slotData">
         <slot :name="scopedSlotName" v-bind="slotData" />

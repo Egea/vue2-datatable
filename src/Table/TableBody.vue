@@ -11,7 +11,8 @@
           <td v-if="shouldRenderSelection">
             <multi-select :selection="selection" :row="item" />
           </td>
-          <td v-for="col in columns" :class="col.tdClass" :style="col.tdStyle">
+          <td v-for="col in columns" :class="[col.tdClass, {'cursor-pointer': clickableColumn(col)}]"
+              :style="col.tdStyle" @click.capture="rowClicked(item, col)">
             <!-- <td> component (tdComp) -->
             <component
               v-if="col.tdComp"
@@ -72,7 +73,20 @@ export default {
   methods: {
     getField(obj, path) {
       return _.get(obj, path)
+    },
+    clickableColumn(col) {
+      return this.enableClickableRows && (col.fireRowClick === undefined || col.fireRowClick)
+    },
+    rowClicked(row, cell) {
+      if (this.clickableColumn(cell)) {
+        this.$emit('on-row-click', row)
+      }
     }
   }
 }
 </script>
+<style>
+  .cursor-pointer {
+    cursor: pointer;
+  }
+</style>

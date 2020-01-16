@@ -36,7 +36,7 @@
   <div v-else name="SimpleTable">
     <table-frame v-bind="propsToNormalTable">
       <table-header v-bind="propsToNormalTable" />
-      <table-body  v-bind="propsToNormalTable">
+      <table-body  v-bind="propsToNormalTable" @on-row-click="$emit('on-row-click', $event)">
         <!-- pass through scoped slots -->
         <template v-for="(_, scopedSlotName) in $scopedSlots" v-slot:[scopedSlotName]="slotData">
           <slot :name="scopedSlotName" v-bind="slotData" />

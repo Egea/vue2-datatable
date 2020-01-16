@@ -15,7 +15,8 @@ export default {
     fixHeaderAndSetBodyMaxHeight: Number, // a fancy prop which combines two props into one
     supportNested: [Boolean, String], // support nested components feature (String is only for 'accordion')
     supportBackup: Boolean, // support backup for `HeaderSettings`
-    loading: { type: Boolean, default: false } // display loading slot in table body
+    loading: { type: Boolean, default: false }, // display loading slot in table body
+    enableClickableRows: { type: Boolean, default: true } // enable the on-row-click event
   },
   data () {
     let datatableInstance = this

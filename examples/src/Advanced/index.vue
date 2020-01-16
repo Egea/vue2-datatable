@@ -1,7 +1,7 @@
 <template>
   <div>
     <p><code>query: {{ query }}</code></p>
-    <datatable v-bind="$data">
+    <datatable v-bind="$data" @on-row-click="rowClicked">
       <button class="btn btn-default" @click="alertSelectedUids" :disabled="!selection.length">
         <i class="fa fa-commenting-o"></i>
         Alert selected uid(s)
@@ -41,7 +41,7 @@ export default {
           { title: 'Color', field: 'color', explain: 'Favorite color', visible: false, tdComp: 'Color' },
           { title: 'Language', field: 'other.lang', visible: false, thComp: 'FilterTh' },
           { title: 'PL', field: 'other.programLang', explain: 'Programming Language', visible: false, thComp: 'FilterTh' },
-          { title: 'Operation', tdComp: 'Opt', visible: 'true' }
+          { title: 'Operation', tdComp: 'Opt', visible: 'true', fireRowClick: false }
         ]
         const groupsDef = {
           Normal: ['Email', 'Username', 'Country', 'IP'],
@@ -96,6 +96,9 @@ export default {
     },
     alertSelectedUids () {
       alert(this.selection.map(({ uid }) => uid))
+    },
+    rowClicked (row) {
+      alert(row.uid + '  ' + row.name)
     },
     sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms))
