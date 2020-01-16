@@ -13,5 +13,5 @@ export default {
   ',': ',',
 
   /* PageSizeSelect.vue */
-  'items / page': 'záznamů / strana'
+  'items for page': 'záznamů / strana'
 }

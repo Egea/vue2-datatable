@@ -13,5 +13,5 @@ export default {
   ',': '项，',
   
   /* PageSizeSelect.vue */
-  'items / page': '项 / 页'
+  'items for page': '项 / 页'
 }

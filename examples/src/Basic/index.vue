@@ -14,7 +14,7 @@ export default {
       { title: 'Username', field: 'name' },
       { title: 'Age', field: 'age', sortable: true },
       { title: 'Email', field: 'email' },
-      { title: 'Country', field: 'country' }
+      { title: 'Country', field: 'other.country' }
     ],
     data: [],
     total: 0,

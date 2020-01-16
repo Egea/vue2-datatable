@@ -77,6 +77,7 @@ export default {
   watch: {
     query: {
       async handler () {
+        this.loading = true
         await this.sleep(2000).then(() => {
           this.handleQueryChange()
           this.loading = false

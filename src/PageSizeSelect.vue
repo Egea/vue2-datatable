@@ -4,7 +4,7 @@
       @change="query.offset = 0 /* reset to the first page */">
       <option v-for="i in pageSizeOptions" :value="i">{{ i }}</option>
     </select>
-    {{ $i18nForDatatable('items / page') }}
+    {{ $i18nForDatatable('items for page') }}
   </label>
 </template>
 <script>

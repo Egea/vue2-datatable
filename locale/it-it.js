@@ -13,5 +13,5 @@ export default {
   ',': ',',
 
   /* PageSizeSelect.vue */
-  'items / page': 'elementi / pagina'
+  'items for page': 'elementi per pagina'
 }
