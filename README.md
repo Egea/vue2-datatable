@@ -3,8 +3,7 @@
 This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 `npm i @egeatech/vue2-datatable-component`
 
-[Original repository](https://onewaytech.github.io/vue2-datatable) | 
-[Original documentation](https://OneWayTech.github.io/vue2-datatable/doc)
+[Original repository](https://onewaytech.github.io/vue2-datatable) |  [Original documentation](https://OneWayTech.github.io/vue2-datatable/doc)
 
 [npm-url]: https://www.npmjs.com/package/vue2-datatable-component
 
@@ -29,10 +28,10 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |fixHeaderAndSetBodyMaxHeight|(Just as its name implies)|Number|-|-|N|
 |support-backup|Whether to enable backup of HeaderSettings|Boolean|true / false|false|N|
 |support-nested|Whether to enable nested components feature (accordion mode is available)|Boolean / String|true / false / 'accordion'|false|N|
-|(*) loading|Display loading slot in table body|Boolean|-|false|N|
-|(*) enableClickableRows|Enable the on-row-click event|Boolean|-|true|N|
+|`(*)` loading|Display loading slot in table body|Boolean|-|false|N|
+|`(*)` enableClickableRows|Enable the on-row-click event|Boolean|-|true|N|
 
-##Column Options (*) => new on this fork:
+## Column Options (*) => new on this fork:
 
 |Attr|Desc|Type|Optional values|Default value|Required|
 |--- |--- |--- |--- |--- |--- |
@@ -52,10 +51,10 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |tdClass|Classes for \<td>|String|-|-|N|
 |tdStyle|Inline styles for \<td>|Object|-|-|N|
 |tdComp|dynamic component for \<td>|String / Object|-|-|N|
-|(*) fireRowClick|fire the on-row-click event if the cell is clicked|Boolean|-|true|N|
+|`(*)` fireRowClick|fire the on-row-click event if the cell is clicked|Boolean|-|true|N|
 
 
-##There are also new component slots:
+## There are also new component slots:
 
 * **spinner slot**: used to insert your own custom spinner (to use with the loading parameter above)
 
@@ -66,7 +65,7 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 
     
 
-##Other personalization:
+## Other personalization:
 * fields can be written as object paths (like 'user.house.address')
 * small style and translation adjustments
 * on-row-click event (bound to cells, cells can be excluded using fireRowClick option)
