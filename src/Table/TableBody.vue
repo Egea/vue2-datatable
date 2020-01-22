@@ -25,7 +25,7 @@
             </component>
             <template v-else-if="$scopedSlots[col.field]">
               <template>
-                <slot :name="col.field" :data="getField(item, col.field)"/>
+                <slot :name="col.field" :data="getField(item, col.field)" :row="item"/>
               </template>
             </template>
             <template v-else>

@@ -8,7 +8,6 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 [npm-url]: https://www.npmjs.com/package/vue2-datatable-component
 
 
-
 ## Parameters (*) => new on this fork:
 
 | Pro |Desc|Type|Optional values|Default value|Required|
@@ -30,6 +29,7 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |support-nested|Whether to enable nested components feature (accordion mode is available)|Boolean / String|true / false / 'accordion'|false|N|
 |`(*)` loading|Display loading slot in table body|Boolean|-|false|N|
 |`(*)` enableClickableRows|Enable the on-row-click event|Boolean|-|true|N|
+
 
 ## Column Options (*) => new on this fork:
 
@@ -59,11 +59,12 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 * **spinner slot**: used to insert your own custom spinner (to use with the loading parameter above)
 
     `<template v-slot:spinner> Loading... </template>`
-* **scoped-slots** named as the table fields: you can access the cell information through the variable 'data' and override the cell content
+* **scoped-slots** named as the table fields: you can access the cell/row information and override the cell content
+    * *data*: for the cell field
+    * *row*: for the row object
     
     `<template v-slot:surname="col"><span style="color: darkred"><i>{{ col.data }}</i></span></template>`
 
-    
 
 ## Other personalization:
 * fields can be written as object paths (like 'user.house.address')

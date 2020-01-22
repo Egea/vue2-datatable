@@ -8,6 +8,7 @@
       </button>
       <template v-slot:spinner> Loading... </template>
       <template v-slot:other.country="col"><span style="color: darkred"><i>{{ col.data }}</i></span></template>
+      <template v-slot:actions="col"><button @click="rowClicked(col.row)">Click me</button></template>
     </datatable>
   </div>
 </template>
@@ -41,7 +42,8 @@ export default {
           { title: 'Color', field: 'color', explain: 'Favorite color', visible: false, tdComp: 'Color' },
           { title: 'Language', field: 'other.lang', visible: false, thComp: 'FilterTh' },
           { title: 'PL', field: 'other.programLang', explain: 'Programming Language', visible: false, thComp: 'FilterTh' },
-          { title: 'Operation', tdComp: 'Opt', visible: 'true', fireRowClick: false }
+          { title: 'Operation', tdComp: 'Opt', visible: 'true', fireRowClick: false },
+          { title: 'Actions', field: 'actions', visible: 'true', fireRowClick: false }
         ]
         const groupsDef = {
           Normal: ['Email', 'Username', 'Country', 'IP'],
