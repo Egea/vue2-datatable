@@ -5,7 +5,7 @@
         <multi-select :selection="selection" :rows="data" />
       </th>
       <th v-for="(col, idx) in columns"
-        :key="col.title || col.field || idx"
+        :key="idx"
         :class="col.thClass" :style="col.thStyle">
         <!-- <th> component (thComp) -->
         <component
