@@ -4,8 +4,8 @@
       <th v-if="shouldRenderSelection" key="--th-multi">
         <multi-select :selection="selection" :rows="data" />
       </th>
-      <th v-for="(col, idx) in columns"
-        :key="idx"
+      <th v-for="col in columns"
+        :key="col.title + col.field"
         :class="col.thClass" :style="col.thStyle">
         <!-- <th> component (thComp) -->
         <component
