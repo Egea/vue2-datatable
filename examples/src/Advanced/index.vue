@@ -25,6 +25,7 @@ export default {
     const amINestedComp = !!this.row
 
     return {
+      HeaderSettings: true,
       supportBackup: true,
       supportNested: true,
       tblClass: 'table-bordered',
@@ -42,8 +43,8 @@ export default {
           { title: 'Color', field: 'color', explain: 'Favorite color', visible: false, tdComp: 'Color' },
           { title: 'Language', field: 'other.lang', visible: false, thComp: 'FilterTh' },
           { title: 'PL', field: 'other.programLang', explain: 'Programming Language', visible: false, thComp: 'FilterTh' },
-          { title: 'Operation', tdComp: 'Opt', visible: 'true', fireRowClick: false },
-          { title: 'Actions', field: 'actions', visible: 'true', fireRowClick: false }
+          { title: 'Operation', tdComp: 'Opt', visible: true, fireRowClick: false },
+          { title: 'Actions', field: 'actions', visible: true, fireRowClick: false }
         ]
         const groupsDef = {
           Normal: ['Email', 'Username', 'Country', 'IP'],
