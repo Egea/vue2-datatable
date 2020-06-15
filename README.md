@@ -29,6 +29,7 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |support-nested|Whether to enable nested components feature (accordion mode is available)|Boolean / String|true / false / 'accordion'|false|N|
 |`(*)` loading|Display loading slot in table body|Boolean|-|false|N|
 |`(*)` enableClickableRows|Enable the on-row-click event|Boolean|-|true|N|
+|`(*)` enableSearchRow|Add a row for filtering the results|Boolean|-|false|N|
 
 
 ## Column Options (*) => new on this fork:
@@ -52,6 +53,7 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |tdStyle|Inline styles for \<td>|Object|-|-|N|
 |tdComp|dynamic component for \<td>|String / Object|-|-|N|
 |`(*)` fireRowClick|fire the on-row-click event if the cell is clicked|Boolean|-|true|N|
+|`(*)` searchable|enable the filtering input (enableSearchRow has to be set true)|Boolean|-|false|N|
 
 
 ## There are also new component slots:

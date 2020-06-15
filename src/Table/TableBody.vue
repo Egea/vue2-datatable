@@ -1,5 +1,12 @@
 <template>
   <tbody>
+    <tr v-if="enableSearchRow">
+      <td v-if="shouldRenderSelection" />
+      <td v-for="col in columns">
+        <input v-if="col.searchable" type="search" class="form-control table-search-input"
+               ref="input" v-model="keyword[col.field]">
+      </td>
+    </tr>
     <tr v-if="loading">
       <td :colspan="colLen" class="text-center">
         <slot name="spinner" />
@@ -70,6 +77,11 @@ export default {
       return this.columns.length + !!this.selection
     }
   },
+  data() {
+    return {
+      keyword: {}
+    }
+  },
   methods: {
     getField(obj, path) {
       return _.get(obj, path)
@@ -81,6 +93,23 @@ export default {
       if (this.clickableColumn(cell)) {
         this.$emit('on-row-click', row)
       }
+    },
+    search: _.debounce(function () {
+      // const { query } = this
+      // `$props.query` would be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
+      // custom query conditions must be set to observable by using `Vue.set / $vm.$set`
+      for (const field in this.keyword) {
+        this.$set(this.query, field, this.keyword[field])
+      }
+      this.query.offset = 0 // reset pagination
+    }, 400)
+  },
+  watch: {
+    keyword: {
+      deep: true,
+      handler(val) {
+        this.search()
+      }
     }
   }
 }
@@ -88,5 +117,9 @@ export default {
 <style>
   .cursor-pointer {
     cursor: pointer;
+  }
+  .table-search-input {
+    border-radius: 0;
+    padding: 0 12px;
   }
 </style>

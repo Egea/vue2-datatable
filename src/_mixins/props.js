@@ -16,7 +16,8 @@ export default {
     supportNested: [Boolean, String], // support nested components feature (String is only for 'accordion')
     supportBackup: Boolean, // support backup for `HeaderSettings`
     loading: { type: Boolean, default: false }, // display loading slot in table body
-    enableClickableRows: { type: Boolean, default: true } // enable the on-row-click event
+    enableClickableRows: { type: Boolean, default: true }, // enable the on-row-click event
+    enableSearchRow: { type: Boolean, default: false } // add a new row for searching purpose
   },
   data () {
     let datatableInstance = this
