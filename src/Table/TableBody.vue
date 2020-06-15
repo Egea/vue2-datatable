@@ -4,7 +4,7 @@
       <td v-if="shouldRenderSelection" />
       <td v-for="col in columns">
         <input v-if="col.searchable" type="search" class="form-control table-search-input"
-               ref="input" v-model="keyword[col.field]">
+               ref="input" v-model="keyword[col.field]" :disabled="loading">
       </td>
     </tr>
     <tr v-if="loading">
@@ -102,7 +102,7 @@ export default {
         this.$set(this.query, field, this.keyword[field])
       }
       this.query.offset = 0 // reset pagination
-    }, 400)
+    }, 500)
   },
   watch: {
     keyword: {
