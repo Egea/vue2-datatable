@@ -95,11 +95,16 @@ export default {
       }
     },
     search: _.debounce(function () {
-      // const { query } = this
       // `$props.query` would be initialized to `{ limit: 10, offset: 0, sort: '', order: '' }` by default
       // custom query conditions must be set to observable by using `Vue.set / $vm.$set`
-      for (const field in this.keyword) {
-        this.$set(this.query, field, this.keyword[field])
+      const keywords = {...this.keyword}
+      for (const field in keywords) {
+        if (this.keyword[field]) {
+          this.$set(this.query, field, this.keyword[field])
+        } else {
+          this.$delete(this.query, field)
+          delete this.keyword[field]
+        }
       }
       this.query.offset = 0 // reset pagination
     }, 500)
