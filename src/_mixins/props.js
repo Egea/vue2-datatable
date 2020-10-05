@@ -18,7 +18,7 @@ export default {
     loading: { type: Boolean, default: false }, // display loading slot in table body
     enableClickableRows: { type: Boolean, default: true }, // enable the on-row-click event
     enableSearchRow: { type: Boolean, default: false }, // add a new row for searching purpose
-    searchField: String, // fire the search query with another string as field
+    searchField: String, // fire the search and order queries with another string as field
     searchOptions: { type: Array, validate: options => options.map(option => option.value && option.label).every(o => o) } // use a dropdown as search mode
   },
   data () {

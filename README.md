@@ -54,7 +54,7 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |tdComp|dynamic component for \<td>|String / Object|-|-|N|
 |`(*)` fireRowClick|fire the on-row-click event if the cell is clicked|Boolean|-|true|N|
 |`(*)` searchable|enable the filtering input (enableSearchRow has to be set true)|Boolean|-|false|N|
-|`(*)` searchField|fire the search query with another string as field|String|-|-|N|
+|`(*)` searchField|fire the search and order queries with another string as field|String|-|-|N|
 |`(*)` searchOptions|use a dropdown as search mode with a set of values `{label: '' value: ''}`, the label will be displayed, the value will be used for the search|Array|-|-|N|
 
 

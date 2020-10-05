@@ -21,7 +21,7 @@
         </template>
 
         <i v-if="col.explain" class="fa fa-info-circle" style="cursor: help" :title="col.explain"></i>
-        <head-sort v-if="col.sortable" :field="col.field" :query="query" />
+        <head-sort v-if="col.sortable" :field="col.searchField ? col.searchField : col.field" :query="query" />
       </th>
     </transition-group>
   </thead>
