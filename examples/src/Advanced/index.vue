@@ -37,7 +37,7 @@ export default {
           { title: 'UID', field: 'uid', label: 'User ID', sortable: true, visible: 'true' },
           { title: 'Email', field: 'email', visible: false, thComp: 'FilterTh', tdComp: 'Email', searchable: true },
           { title: 'Username', field: 'name', thComp: 'FilterTh', tdStyle: { fontStyle: 'italic' }, searchable: true },
-          { title: 'Country', field: 'other.country', thStyle: { fontWeight: 'normal' } },
+          { title: 'Country', field: 'country', thStyle: { fontWeight: 'normal' }, searchable: true, searchOptions: [{label: 'Ru', value: 'Russia'}, {label: 'Ge', value: 'Germany'}, {label: 'Fr', value: 'France'}] },
           { title: 'IP', field: 'ip', visible: false, tdComp: 'IP' },
           { title: 'Age', field: 'age', sortable: true, thClass: 'text-info', tdClass: 'text-success' },
           { title: 'Create time', field: 'createTime', sortable: true, colClass: 'w-240', thComp: 'CreatetimeTh', tdComp: 'CreatetimeTd' },

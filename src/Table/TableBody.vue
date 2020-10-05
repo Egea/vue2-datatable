@@ -1,10 +1,12 @@
 <template>
   <tbody>
     <tr v-if="enableSearchRow">
-      <td v-if="shouldRenderSelection" />
-      <td v-for="col in columns">
-        <input v-if="col.searchable" type="search" class="form-control table-search-input"
-               ref="input" v-model="keyword[col.field]" :disabled="loading">
+      <td v-if="shouldRenderSelection" /> <!-- Checkbox for rows -->
+      <td v-for="col in columns"> <!-- Custom search with input or dropdown -->
+        <v-select v-if="col.searchable && col.searchOptions" :options="col.searchOptions" :disabled="loading"
+                  v-model="keyword[col.searchField ? col.searchField : col.field]" />
+        <input v-else-if="col.searchable" type="search" class="form-control table-search-input"
+               ref="input" v-model="keyword[col.searchField ? col.searchField : col.field]" :disabled="loading">
       </td>
     </tr>
     <tr v-if="loading">
@@ -67,10 +69,11 @@ import MultiSelect from './MultiSelect.vue'
 import props from '../_mixins/props'
 import shouldRenderSelection from '../_mixins/shouldRenderSelection'
 import _ from 'lodash'
+import vSelect from 'vue-select'
 
 export default {
   name: 'TableBody',
-  components: { MultiSelect },
+  components: { MultiSelect, vSelect },
   mixins: [props, shouldRenderSelection],
   computed: {
     colLen () {
@@ -100,8 +103,9 @@ export default {
       const keywords = {...this.keyword}
       for (const field in keywords) {
         if (this.keyword[field]) {
-          this.$set(this.query, field, this.keyword[field])
+          this.$set(this.query, field, typeof this.keyword[field] === 'object' ? this.keyword[field].value : this.keyword[field])
         } else {
+          // empty string search
           this.$delete(this.query, field)
           delete this.keyword[field]
         }

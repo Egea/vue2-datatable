@@ -1,7 +1,7 @@
 {
   "name": "@egeatech/vue2-datatable-component",
   "description": "This is a fork of Datatable for Vue.js 2.x of Ken Berkeley",
-  "version": "2.3.12",
+  "version": "2.3.13",
   "main": "dist/min.js",
   "module": "src/main.js",
   "author": "Egeatech <info@egeatech.com>",
@@ -56,7 +56,8 @@
     "require-extension-hooks": "^0.3.0",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^0.4.0",
-    "vue-cli": "2.8.2"
+    "vue-cli": "2.8.2",
+    "vue-select": "^3.10.5"
   },
   "ava": {
     "require": [

@@ -17,10 +17,10 @@ const users = Array(total).fill().map((item, idx) => {
       uniq(Array(getRandomUid()).fill().map(() => getRandomUid())),
       idx // exclude `myself`
     ),
+    country: Random.pick(
+      ['US', 'UK', 'China', 'Russia', 'Germany', 'France', 'Japan']
+    ),
     other: {
-      country: Random.pick(
-        ['US', 'UK', 'China', 'Russia', 'Germany', 'France', 'Japan']
-      ),
       lang: Random.pick(
         ['English', 'Chinese', 'Russian', 'German', 'French', 'Japanese']
       ),

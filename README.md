@@ -22,8 +22,8 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |HeaderSettings|Whether to render HeaderSettings|Boolean|true / false|false|N|
 |Pagination|Whether to render pagination relevant|Boolean|true / false|true|N|
 |pageSizeOptions|options for PageSizeSelect|Array|-|[10, 20, 40, 80, 100]|N|
-|tbl-class|Classes for <table>|String / Object / Array|-|-|N|
-|tbl-style|Inline styles for <table>|String / Object / Array|-|-|N|
+|tbl-class|Classes for \<table>|String / Object / Array|-|-|N|
+|tbl-style|Inline styles for \<table>|String / Object / Array|-|-|N|
 |fixHeaderAndSetBodyMaxHeight|(Just as its name implies)|Number|-|-|N|
 |support-backup|Whether to enable backup of HeaderSettings|Boolean|true / false|false|N|
 |support-nested|Whether to enable nested components feature (accordion mode is available)|Boolean / String|true / false / 'accordion'|false|N|
@@ -54,9 +54,11 @@ This is a fork of Datatable for Vue.js 2.x of Ken Berkeley
 |tdComp|dynamic component for \<td>|String / Object|-|-|N|
 |`(*)` fireRowClick|fire the on-row-click event if the cell is clicked|Boolean|-|true|N|
 |`(*)` searchable|enable the filtering input (enableSearchRow has to be set true)|Boolean|-|false|N|
+|`(*)` searchField|fire the search query with another string as field|String|-|-|N|
+|`(*)` searchOptions|use a dropdown as search mode with a set of values `{label: '' value: ''}`, the label will be displayed, the value will be used for the search|Array|-|-|N|
 
 
-## There are also new component slots:
+## New component slots:
 
 * **spinner slot**: used to insert your own custom spinner (to use with the loading parameter above)
 
