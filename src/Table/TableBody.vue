@@ -85,6 +85,18 @@ export default {
       keyword: {}
     }
   },
+  mounted() {
+    // Check if a default value is to be set for the text or dropdown filters (from the default query)
+    let keywords = {}
+    this.columns.filter(col => this.query[col.searchField ? col.searchField : col.field]).forEach(col => {
+      if (col.searchOptions) {
+        keywords[col.searchField ? col.searchField : col.field] = col.searchOptions.find(option => option.value === this.query[col.searchField ? col.searchField : col.field])
+      } else {
+        keywords[col.searchField ? col.searchField : col.field] = this.query[col.searchField ? col.searchField : col.field]
+      }
+    })
+    this.$set(this, 'keyword', keywords)
+  },
   methods: {
     getField(obj, path) {
       return _.get(obj, path)
